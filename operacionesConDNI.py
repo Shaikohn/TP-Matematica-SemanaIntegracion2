@@ -62,14 +62,14 @@ def frecuencia_digitos(dni):
                 frecuencia[digito] += 1
             else:
                 frecuencia[digito] = 1
-    print(f"Frecuencia de dígitos en {dni}: {frecuencia}")
+    print(f"Frecuencia de dígitos en el DNI {dni}: {frecuencia}")
 
 def suma_digitos(dni):
     suma = 0
     for digito in dni:
         if digito.isdigit():
             suma += int(digito)
-    print(f"Suma de dígitos en el {dni}: {suma}")
+    print(f"Suma de dígitos en el DNI {dni}: {suma}")
 
 def digito_en_todos_los_dnis(dnis):
     for i in range(0, 10):
@@ -88,7 +88,8 @@ def menu():
     print("2. Calcular frecuencia de dígitos")
     print("3. Calcular suma de dígitos")
     print("4. Verificar diversidad numérica")
-    print("5. Salir")
+    print("5. Realizar todas las funciones adicionales")
+    print("6. Salir")
     opcion = int(input("Selecciona una opción: "))
     if opcion == 1:
         digito_en_todos_los_dnis(dnis)
@@ -101,6 +102,14 @@ def menu():
     elif opcion == 4:
         verificar_diversidad_numerica()
     elif opcion == 5:
+        digito_en_todos_los_dnis(dnis)
+        for dni in dnis:
+            print("---------")
+            frecuencia_digitos(dni)
+            suma_digitos(dni)
+        print("---------")
+        verificar_diversidad_numerica()
+    elif opcion == 6:
         print("Saliendo del programa.")
         return
     else:
