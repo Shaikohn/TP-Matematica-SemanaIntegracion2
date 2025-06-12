@@ -10,6 +10,9 @@ def definir_dnis():
     contador = 1
     while cantidadDeDnis > 0:
         dni = input(f"Ingresa el DNI numero {contador}: ")
+        if not dni.isdigit():
+            print("El DNI debe contener solo dígitos.")
+            continue
         dnis.append(dni)
         contador += 1
         cantidadDeDnis -= 1
